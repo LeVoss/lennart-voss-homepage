@@ -30,14 +30,14 @@ st.divider()
 st.header("Das aktuelle Werk")
 col1, col2 = st.columns([1, 2])
 with col1:
-    # Achte darauf, dass die Bilddatei in GitHub "cover_rf.png" heißt
-    if os.path.exists("cover_rf.png"):
+    # Exakter Dateiname inklusive Klammern und Leerzeichen
+    if os.path.exists("Lennart Voss (Album-Cover).png"):
         try:
-            st.image("cover_rf.png", use_container_width=True)
+            st.image("Lennart Voss (Album-Cover).png", use_container_width=True)
         except Exception:
-            st.error("Bilddatei 'cover_rf.png' fehlerhaft oder nicht lesbar.")
+            st.error("Bilddatei konnte nicht geladen werden.")
     else:
-        st.info("📖 Cover-Bild folgt...")
+        st.warning("⚠️ Bitte lade 'Lennart Voss (Album-Cover).png' in dein GitHub-Repository hoch.")
 
 with col2:
     st.write("""
@@ -53,12 +53,10 @@ st.divider()
 st.header("📦 Buch direkt bei mir bestellen")
 st.write("Bitte wähle im untenstehenden Formular unter **'Auswahl*'** dein Buch aus:")
 
-# Liste der Bestelloptionen zur Orientierung
 st.markdown("""
 * **14,99 €** – Die Roman-Fabrik (Standard Taschenbuch, inkl. Versand innerhalb Deutschland)
 """)
 
-# Dein neues Google-Formular (Link aktualisiert)
 form_url = "https://docs.google.com/forms/d/e/1FAIpQLSeWg8-ABDXBlSIJl6QMz_AELsRAoZGeQQL07YYN82bXueGM9Q/viewform?embedded=true"
 
 st.markdown(f"""
@@ -67,7 +65,7 @@ st.markdown(f"""
     </iframe>
     """, unsafe_allow_html=True)
 
-# 6. BUSINESS-MODUL (Angebot für andere Autoren)
+# 6. BUSINESS-MODUL
 st.divider()
 st.success("### Du bist Autor und möchtest auch so eine Homepage?")
 st.write(f"""
