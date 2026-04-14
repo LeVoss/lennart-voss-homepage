@@ -30,11 +30,12 @@ st.divider()
 st.header("Das aktuelle Werk")
 col1, col2 = st.columns([1, 2])
 with col1:
+    # Achte darauf, dass die Bilddatei in GitHub "cover_rf.png" heißt
     if os.path.exists("cover_rf.png"):
         try:
             st.image("cover_rf.png", use_container_width=True)
         except Exception:
-            st.error("Bilddatei 'cover_rf.png' fehlerhaft.")
+            st.error("Bilddatei 'cover_rf.png' fehlerhaft oder nicht lesbar.")
     else:
         st.info("📖 Cover-Bild folgt...")
 
@@ -50,14 +51,15 @@ st.divider()
 
 # 5. BESTELL-ÜBERSICHT & FORMULAR
 st.header("📦 Buch direkt bei mir bestellen")
-st.write("Wähle hier deine gewünschte Ausgabe aus (Preise inkl. Versand innerhalb Deutschland):")
+st.write("Bitte wähle im untenstehenden Formular unter **'Auswahl*'** dein Buch aus:")
 
+# Liste der Bestelloptionen zur Orientierung
 st.markdown("""
 * **14,99 €** – Die Roman-Fabrik (Standard Taschenbuch, inkl. Versand innerhalb Deutschland)
 """)
 
-# Deine Google-Form URL
-form_url = "https://docs.google.com/forms/d/e/1FAIpQLSf60i048_9KbQ_yMcM0kJQpBGA6s3xOuASdLO6hPfhr6z2zbQ/viewform?embedded=true"
+# Dein neues Google-Formular (Link aktualisiert)
+form_url = "https://docs.google.com/forms/d/e/1FAIpQLSeWg8-ABDXBlSIJl6QMz_AELsRAoZGeQQL07YYN82bXueGM9Q/viewform?embedded=true"
 
 st.markdown(f"""
     <iframe src="{form_url}" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">
@@ -65,7 +67,7 @@ st.markdown(f"""
     </iframe>
     """, unsafe_allow_html=True)
 
-# 6. BUSINESS-MODUL
+# 6. BUSINESS-MODUL (Angebot für andere Autoren)
 st.divider()
 st.success("### Du bist Autor und möchtest auch so eine Homepage?")
 st.write(f"""
