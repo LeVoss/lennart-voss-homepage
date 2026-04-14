@@ -30,7 +30,6 @@ st.divider()
 st.header("Das aktuelle Werk")
 col1, col2 = st.columns([1, 2])
 with col1:
-    # Hier das Cover-Bild der Roman-Fabrik (z.B. cover_rf.png) hochladen
     if os.path.exists("cover_rf.png"):
         try:
             st.image("cover_rf.png", use_container_width=True)
@@ -53,12 +52,11 @@ st.divider()
 st.header("📦 Buch direkt bei mir bestellen")
 st.write("Wähle hier deine gewünschte Ausgabe aus (Preise inkl. Versand innerhalb Deutschland):")
 
-# Liste der Bestelloptionen
 st.markdown("""
 * **14,99 €** – Die Roman-Fabrik (Standard Taschenbuch, inkl. Versand innerhalb Deutschland)
 """)
 
-# Falls du ein eigenes Google Formular für Lennart Voss hast, hier die URL austauschen:
+# Deine Google-Form URL
 form_url = "https://docs.google.com/forms/d/e/1FAIpQLSf60i048_9KbQ_yMcM0kJQpBGA6s3xOuASdLO6hPfhr6z2zbQ/viewform?embedded=true"
 
 st.markdown(f"""
@@ -67,13 +65,13 @@ st.markdown(f"""
     </iframe>
     """, unsafe_allow_html=True)
 
-# 6. BUSINESS-MODUL (Optional, für deine potenziellen Kunden)
+# 6. BUSINESS-MODUL
 st.divider()
 st.success("### Du bist Autor und möchtest auch so eine Homepage?")
-st.write("""
+st.write(f"""
 Präsentiere deine Bücher professionell und verkaufe sie direkt an deine Leser. 
 Ich erstelle für dich eine moderne Autoren-Homepage – schnell, unkompliziert und individuell. 
-Schreib mir einfach eine Nachricht über das Formular oben oder direkt per E-Mail!
+Schreib mir einfach eine Nachricht über das Formular oben oder direkt an: **lennart.voss.autor@outlook.de**
 """)
 
 # 7. FOOTER
@@ -84,11 +82,11 @@ footer_col1, footer_col2 = st.columns(2)
 with footer_col1:
     with st.expander("Impressum"):
         st.write("""
-        **Angaben gemäß § 5 TMG:** Stefan Röser (Lennart Voss),  
+        **Angaben gemäß § 5 TMG:** Lennart Voss,  
         c/o Online Impressum.de #6281, Europaring 90, 
         53757 Sankt Augustin
         
-        **Kontakt:** E-Mail: stefan@booksart.de  
+        **Kontakt:** E-Mail: lennart.voss.autor@outlook.de  
         """)
 with footer_col2:
     with st.expander("Datenschutz"):
