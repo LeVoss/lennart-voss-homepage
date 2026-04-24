@@ -2,7 +2,6 @@ name: App am Leben erhalten
 
 on:
   schedule:
-    # Alle 4 Stunden, um absolut sicherzugehen
     - cron: '0 */4 * * *'
   workflow_dispatch:
 
@@ -10,6 +9,6 @@ jobs:
   ping_app:
     runs-on: ubuntu-latest
     steps:
-      - name: Sende Weckruf
+      - name: Hard-Reset Weckruf
         run: |
-          curl -L -v -m 30 https://lennartvoss.streamlit.app/
+          wget --spider --user-agent="Mozilla/5.0" --tries=3 --timeout=30 https://lennartvoss.streamlit.app/
